@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubra quanto você pode economizar com entretenimento | Quiz</title>
+<meta name="description" content="Responda 4 perguntas rápidas e descubra como reunir filmes, séries e programação ao vivo em uma única assinatura. Teste grátis pelo WhatsApp.">
+<meta name="theme-color" content="#07070c">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quanto você gasta com TV? Faça o quiz em 20 segundos">
+<meta property="og:description" content="4 perguntas rápidas para descobrir a melhor forma de assistir mais pagando menos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23ff2d55'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body class="quiz-body">
+<div class="glow"></div>
+
+<header class="q-top">
+  <div class="q-head">
+    <button class="q-back" id="backBtn" hidden aria-label="Voltar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>Voltar
+    </button>
+    <div class="logo" id="logoTop"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4l14 8-14 8z"/></svg></span><span data-brand></span></div>
+    <span style="width:70px"></span>
+  </div>
+  <div class="q-progress" id="progress" hidden>
+    <div class="q-progress-info"><span id="progLabel">Pergunta 1 de 4</span><span id="progPct">0%</span></div>
+    <div class="q-bar"><span id="progBar"></span></div>
+  </div>
+</header>
+
+<main class="q-stage" id="stage">
+
+  <!-- INTRO -->
+  <section class="screen intro active" data-screen="intro">
+    <span class="badge" style="align-self:center"><i class="dot"></i> Quiz rápido · 4 perguntas</span>
+    <svg class="intro-art" viewBox="0 0 360 200" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2d55"/><stop offset="1" stop-color="#c026d3"/></linearGradient>
+      <linearGradient id="s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0d2e"/><stop offset=".6" stop-color="#140c33"/><stop offset="1" stop-color="#0b1b3f"/></linearGradient></defs>
+      <rect x="40" y="10" width="280" height="160" rx="16" fill="#14141f" stroke="#2a2a40"/>
+      <rect x="52" y="22" width="256" height="136" rx="9" fill="url(#s)"/>
+      <circle cx="250" cy="70" r="40" fill="#ffc83d" opacity=".25"/>
+      <rect x="64" y="104" width="34" height="44" rx="5" fill="#ff2d55" opacity=".9"/>
+      <rect x="104" y="104" width="34" height="44" rx="5" fill="#2563eb" opacity=".9"/>
+      <rect x="144" y="104" width="34" height="44" rx="5" fill="#16a34a" opacity=".9"/>
+      <rect x="184" y="104" width="34" height="44" rx="5" fill="#f59e0b" opacity=".9"/>
+      <rect x="224" y="104" width="34" height="44" rx="5" fill="#c026d3" opacity=".9"/>
+      <rect x="64" y="38" width="110" height="12" rx="4" fill="#fff" opacity=".85"/>
+      <rect x="64" y="56" width="70" height="7" rx="4" fill="#fff" opacity=".4"/>
+      <circle cx="180" cy="80" r="20" fill="url(#g)"/><path d="M175 71l14 9-14 9z" fill="#fff"/>
+      <rect x="150" y="172" width="60" height="6" rx="3" fill="#2a2a40"/><rect x="120" y="180" width="120" height="6" rx="3" fill="#1d1d2e"/>
+    </svg>
+    <h1>Você está pagando <span class="grad-txt">caro demais</span> para se divertir?</h1>
+    <p>Responda 4 perguntas rápidas e descubra como ter mais filmes, séries e programação ao vivo em uma única assinatura.</p>
+    <button class="btn btn-grad btn-block" id="startBtn">Começar agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <div class="intro-meta"><span>⏱️ Leva 20 segundos</span><span>🔒 Sem cadastro</span><span>🎁 Teste grátis no final</span></div>
+  </section>
+
+  <!-- PERGUNTAS (texto preservado conforme briefing) -->
+  <section class="screen" data-screen="q1" data-q="q1">
+    <div class="q-step">Pergunta 1</div>
+    <h2 class="q-title">Você gasta quanto por mês em TV por assinatura?</h2>
+    <div class="opts">
+      <button class="opt" data-v="menos_30" data-label="Menos de R$ 30"><span class="ico">💵</span>Menos de R$ 30<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+      <button class="opt" data-v="mais_30" data-label="Mais de R$ 30"><span class="ico">💸</span>Mais de R$ 30<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+    </div>
+  </section>
+
+  <section class="screen" data-screen="q2" data-q="q2">
+    <div class="q-step">Pergunta 2</div>
+    <h2 class="q-title">Você gostaria de assinar alguma plataforma que ainda não tem, mas acha muito caro?</h2>
+    <div class="opts">
+      <button class="opt" data-v="sim" data-label="Sim!"><span class="ico">🙋</span>Sim!<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+      <button class="opt" data-v="nao" data-label="Não."><span class="ico">🙅</span>Não.<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+    </div>
+  </section>
+
+  <section class="screen" data-screen="q3" data-q="q3">
+    <div class="q-step">Pergunta 3</div>
+    <h2 class="q-title">Você sabia que pode reunir, em uma única assinatura, diferentes opções de entretenimento, incluindo filmes, séries e programação ao vivo?</h2>
+    <div class="opts">
+      <button class="opt" data-v="nao_sabia" data-label="Não sabia, gostaria de saber mais"><span class="ico">😍</span>Não sabia, gostaria de saber mais 😍<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+      <button class="opt" data-v="ja_sabia" data-label="Já sabia!"><span class="ico">😎</span>Já sabia!<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+    </div>
+  </section>
+
+  <section class="screen" data-screen="q4" data-q="q4">
+    <div class="q-step">Pergunta 4</div>
+    <h2 class="q-title">Você gostaria de fazer um teste grátis para conhecer como funciona?</h2>
+    <div class="opts">
+      <button class="opt" data-v="sim" data-label="Sim! Quero testar agora!"><span class="ico">🚀</span>Sim! Quero testar agora!<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+      <button class="opt" data-v="nao" data-label="Não, obrigado."><span class="ico">🤔</span>Não, obrigado.<span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M5 12l5 5 9-10"/></svg></span></button>
+    </div>
+  </section>
+
+  <!-- ANALISANDO -->
+  <section class="screen loading" data-screen="loading">
+    <div class="spinner"></div>
+    <h2 style="font-size:1.4rem">Analisando suas respostas…</h2>
+    <div class="load-steps">
+      <div>✔ Calculando seu gasto atual</div>
+      <div>✔ Identificando seu perfil</div>
+      <div>✔ Preparando sua recomendação</div>
+    </div>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="screen result" data-screen="result">
+    <div class="result-card">
+      <span class="result-tag" id="rTag">Seu resultado</span>
+      <h2 id="rTitle"></h2>
+      <p id="rText"></p>
+      <ul class="result-list" id="rList"></ul>
+    </div>
+    <div class="price-pill"><small>Planos a partir de</small><strong>R$ <span data-price></span></strong><small>/mês</small></div>
+    <div class="cta-stack">
+      <a class="btn btn-wa btn-block pulse" id="waBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.2 1.3 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.6-8.4z"/></svg>
+        <span id="waTxt">QUERO MEU TESTE GRÁTIS!</span></a>
+      <a class="btn btn-ghost btn-block" id="lpBtn" href="oferta.html">Ver planos e como funciona</a>
+      <p class="cta-note" id="ctaNote">Atendimento pelo WhatsApp · Sem compromisso</p>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/tracking.js"></script>
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>
