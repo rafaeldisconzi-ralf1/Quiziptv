@@ -3,7 +3,7 @@
    ============================================================ */
 window.APP_CONFIG = {
   brand: "MaisTela",                 // nome da marca / app
-  whatsapp: "5555999999999",          // DDI+DDD+número, só dígitos (ex.: 5555991234567)
+  whatsapp: "5555991848382",          // DDI+DDD+número, só dígitos (ex.: 5555991234567)
   priceFrom: "26,90",                 // "Planos a partir de R$ ..."
   trialAvailable: true,               // false = esconde/ajusta a menção ao teste grátis
   trialLabel: "2 horas",
