@@ -169,6 +169,12 @@ section{position:relative;z-index:1;padding:72px 0}
 .cmp-card h3{font-size:1.15rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .cmp-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--line);color:var(--muted);font-size:.98rem}
 .cmp-line b{color:var(--txt)}
+.cmp-line span{display:flex;flex-direction:column;gap:2px}
+.cmp-line .svc{font-weight:700;color:var(--txt);font-size:1rem}
+.cmp-line small{font-size:.78rem;color:var(--dim)}
+.cmp-line>b{align-self:center;white-space:nowrap}
+.cmp-extra{margin-top:10px;border-top:1px dashed var(--line)}
+.cmp-total-sm .v{font-size:1.25rem}
 .cmp-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;font-weight:800}
 .cmp-total .v{font-family:var(--display);font-size:1.7rem}
 .cmp-bad .v{color:#ff6b81}
