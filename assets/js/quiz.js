@@ -1,7 +1,7 @@
 /* ============ QUIZ ============ */
 (function () {
   var C = window.APP_CONFIG;
-  var ORDER = ["intro", "q1", "q2", "q3", "q4", "loading", "result"];
+  var ORDER = ["intro", "q1", "q2", "q3", "q4", "result"];
   var QUESTIONS = ["q1", "q2", "q3", "q4"];
   var answers = {};   // { q1: {v, label}, ... }
   var current = "intro";
@@ -39,7 +39,7 @@
 
   function updateChrome() {
     var qi = QUESTIONS.indexOf(current);
-    var showProg = qi > -1 || current === "loading" || current === "result";
+    var showProg = qi > -1 || current === "result";
     $("#progress").hidden = !showProg;
     $("#backBtn").hidden = !(qi > -1 || current === "result");
     var done = qi > -1 ? qi : 4;
@@ -148,10 +148,7 @@
       q1: answers.q1 && answers.q1.v, q2: answers.q2 && answers.q2.v, q3: answers.q3 && answers.q3.v, q4: answers.q4 && answers.q4.v });
 
     renderResult(p);
-    go("loading");
-    var steps = $$(".load-steps div");
-    steps.forEach(function (s, i) { setTimeout(function () { s.classList.add("on"); }, 350 + i * 550); });
-    setTimeout(function () { go("result"); }, 2200);
+    go("result");
   }
 
   function renderResult(p) {
@@ -201,4 +198,5 @@
   }
 
   updateChrome();
+  logServer("quiz_view");
 })();

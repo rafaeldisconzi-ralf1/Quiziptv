@@ -37,12 +37,28 @@
 
   var STD = { Lead: 1, Contact: 1, ViewContent: 1, CompleteRegistration: 1, InitiateCheckout: 1 };
 
+  // ---- Contador próprio (track.php na Hostinger) ----
+  var sid;
+  try { sid = sessionStorage.getItem("sm_sid") || localStorage.getItem("sm_sid"); } catch (e) {}
+  if (!sid) sid = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  try { sessionStorage.setItem("sm_sid", sid); localStorage.setItem("sm_sid", sid); } catch (e) {}
+  var SERVER_EVENTS = { quiz_view: 1, QuizStart: 1, QuizComplete: 1, QuizToLP: 1, lp_view: 1, Lead: 1 };
+  window.logServer = function (name, params) {
+    if (!SERVER_EVENTS[name] || location.protocol === "file:") return;
+    var body = JSON.stringify(Object.assign({ event: name, session: sid }, utm, params || {}));
+    try {
+      if (navigator.sendBeacon) navigator.sendBeacon("track.php", new Blob([body], { type: "application/json" }));
+      else fetch("track.php", { method: "POST", body: body, keepalive: true });
+    } catch (e) {}
+  };
+
   /** track("QuizAnswer", {...}) → dataLayer + GA4 + Pixel */
   window.track = function (name, params) {
     params = Object.assign({}, params || {}, utm);
     dataLayer.push(Object.assign({ event: name }, params));
     if (window.gtag && C.ga4Id) gtag("event", name, params);
     if (window.fbq && C.metaPixelId) fbq(STD[name] ? "track" : "trackCustom", name, params);
+    logServer(name === "ViewContent" ? "lp_view" : name, params);
   };
 
   /** Monta link do WhatsApp com mensagem pré-preenchida */
